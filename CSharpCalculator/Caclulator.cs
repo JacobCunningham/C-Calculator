@@ -13,7 +13,7 @@ namespace CSharpCalculator
 
         private List<string> operators = new List<string>(new string[] { "-", "+", "/", "*" });
         private List<string> _leftAssociatedOperators = new List<string>(new string[] { "-", "+", "/", "*" });
-        private List<string> functions = new List<string>(new string[] { "sin", "cos", "tan","^","ln","log" });
+        private List<string> functions = new List<string>(new string[] { "sin", "cos", "tan","^","ln","log", "S" });
 
         public Queue<string> ParseExpression(string input)
         {
@@ -131,20 +131,22 @@ namespace CSharpCalculator
             return 0;
         }
 
-        private double _evaluateFunction(string function, double param)
+        private double _evaluateFunction(string function, double args)
         {
             switch (function)
             {
                 case "sin":
-                    return Math.Sin(param);
+                    return Math.Sin(args);
                 case "cos":
-                    return Math.Cos(param);
+                    return Math.Cos(args);
                 case "tan":
-                    return Math.Tan(param);
+                    return Math.Tan(args);
                 case "log":
-                    return Math.Log10(param);
+                    return Math.Log10(args);
                 case "ln":
-                    return Math.Log(param);
+                    return Math.Log(args);
+                case "S":
+                    return Math.Sqrt(args);
                 default:
                     break;
             }

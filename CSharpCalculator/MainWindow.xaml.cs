@@ -60,6 +60,16 @@ namespace CSharpCalculator
             expression = "";
         }
 
+        private void _add_LParen()
+        {
+            expression += "(";
+        }
+
+        private void _add_RParen()
+        {
+            expression += ")";
+        }
+
         private void OperandButton_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
@@ -80,19 +90,10 @@ namespace CSharpCalculator
                     expression += "/";
                     break;
                 case "(":
-                    expression += "(";
+                    _add_LParen();
                     break;
                 case ")":
-                    expression += ")";
-                    break;
-                case "sin":
-                    expression += "sin";
-                    break;
-                case "cos":
-                    expression += "cos";
-                    break;
-                case "tan":
-                    expression += "tan";
+                    _add_RParen();
                     break;
                 case "x²":
                     expression += "^";
@@ -126,6 +127,41 @@ namespace CSharpCalculator
         {
             expression += Math.PI;
             MainDisplay.UpdateDisplay("π");
+        }
+
+        private void RadButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void SqrtButton_Click(object sender, RoutedEventArgs e)
+        {
+            expression += "S(";
+            MainDisplay.UpdateDisplay("√(");
+        }
+
+        private void FunctionButton_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            string operand = (string)button.Content;
+
+            switch (operand)
+            {
+                case "sin":
+                    expression += "sin";
+                    break;
+                case "cos":
+                    expression += "cos";
+                    break;
+                case "tan":
+                    expression += "tan";
+                    break;
+                default:
+                    break;
+            }
+            _add_LParen();
+            MainDisplay.UpdateDisplay(operand);
+            MainDisplay.UpdateDisplay("(");
         }
     }
 }

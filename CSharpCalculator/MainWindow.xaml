@@ -7,41 +7,41 @@
         mc:Ignorable="d"
         Title="CSharpCalculator" Height="900" Width="700">
     <Grid RenderTransformOrigin="0.464,0.506">
-        <TextBlock x:Name="Textbox2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="128,152,0,0" Background="WhiteSmoke" Width="380" Height="32" FontSize="20"/>
-        <Button x:Name="One" Content="1" HorizontalAlignment="Left" Margin="219,368,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click" RenderTransformOrigin="2.033,-3.183" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="Two" Content="2" HorizontalAlignment="Left" Margin="310,368,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click" RenderTransformOrigin="2.317,-3.15" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="Three" Content="3" HorizontalAlignment="Left" Margin="401,369,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="Four" Content="4" HorizontalAlignment="Left" Margin="219,445,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click" RenderTransformOrigin="0.517,0.517" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="Five" Content="5" HorizontalAlignment="Left" Margin="310,445,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="Six" Content="6" HorizontalAlignment="Left" Margin="401,446,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="Seven" Content="7" HorizontalAlignment="Left" Margin="219,523,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="Eight" Content="8" HorizontalAlignment="Left" Margin="310,522,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="Nine" Content="9" HorizontalAlignment="Left" Margin="401,523,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click" Height="72" RenderTransformOrigin="0.727,-0.708" Background="#FFF3F3F3"/>
-        <Button x:Name="EnterButton" Content="=" HorizontalAlignment="Left" Margin="401,600,0,0" VerticalAlignment="Top" Width="86" Click="EnterButton_Click" RenderTransformOrigin="2.033,-3.183" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="ClearButton" Content="Clear" HorizontalAlignment="Left" Margin="401,291,0,0" VerticalAlignment="Top" Width="86" Click="ClearButton_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="AddButton" Content="+" HorizontalAlignment="Left" Margin="492,369,0,0" VerticalAlignment="Top" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="SubtractButton" Content="-" HorizontalAlignment="Left" Margin="492,446,0,0" VerticalAlignment="Top" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="MultiplyButton" Content="x" HorizontalAlignment="Left" Margin="492,523,0,0" VerticalAlignment="Top" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="DivideButton" Content="/" HorizontalAlignment="Left" Margin="492,600,0,0" VerticalAlignment="Top" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="BackspaceButton" Content="Backspace" HorizontalAlignment="Left" Margin="492,291,0,0" VerticalAlignment="Top" Width="86" Click="BackspaceButton_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="Zero" Content="0" HorizontalAlignment="Left" Margin="310,599,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click" Height="72" Background="#FFF3F3F3"/>
-        <TextBlock x:Name="Textbox1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="128,184,0,0" Background="WhiteSmoke" Width="380" Height="30" FontSize="20"/>
-        <TextBlock x:Name="Textbox0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="128,214,0,0" Background="WhiteSmoke" Width="380" Height="32" FontSize="20"/>
-        <Button x:Name="RightParenButton" Content=")" HorizontalAlignment="Left" Margin="128,291,0,0" VerticalAlignment="Top" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="LeftParenButton" Content="(" HorizontalAlignment="Left" Margin="37,291,0,0" VerticalAlignment="Top" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3"/>
-        <TextBlock x:Name="Textbox3" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="128,122,0,0" Background="WhiteSmoke" Width="380" Height="30" FontSize="20"/>
-        <TextBlock x:Name="Textbox4" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="128,90,0,0" Background="WhiteSmoke" Width="380" Height="32" FontSize="20"/>
-        <Button x:Name="SineButton" Content="sin" HorizontalAlignment="Left" Margin="128,445,0,0" VerticalAlignment="Top" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="CosineButton" Content="cos" HorizontalAlignment="Left" Margin="128,522,0,0"  VerticalAlignment="Top" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="TangentButton" Content="tan" Margin="128,368,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="OperandButton_Click" Width="86"  Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="PiButton" Content="π" HorizontalAlignment="Left" Margin="37,599,0,0" VerticalAlignment="Top" Width="86" Click="PiButton_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="Seven_Copy" Content="7" HorizontalAlignment="Left" Margin="219,522,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="OneOverXButton" Content="1/x" HorizontalAlignment="Left" Margin="37,522,0,0" VerticalAlignment="Top" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="NaturalLogButton" Content="ln" HorizontalAlignment="Left" Margin="37,445,0,0" VerticalAlignment="Top" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="LogButton" Content="log" HorizontalAlignment="Left" Margin="37,368,0,0" VerticalAlignment="Top" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="eButton" Content="e" HorizontalAlignment="Left" Margin="128,599,0,0" VerticalAlignment="Top" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="RadButton" Content="Rad" HorizontalAlignment="Left" Margin="219,291,0,0" VerticalAlignment="Top" Width="86" Click="ClearButton_Click" Height="72" Background="#FFF3F3F3"/>
-        <Button x:Name="SqrtButton" Content="√" HorizontalAlignment="Left" Margin="310,291,0,0" VerticalAlignment="Top" Width="86" Click="ClearButton_Click" Height="72" Background="#FFF3F3F3"/>
+        <TextBlock x:Name="Textbox2" HorizontalAlignment="Left" TextWrapping="Wrap" Margin="169,150,0,0" Background="WhiteSmoke" Width="350" Height="32" FontSize="20" VerticalAlignment="Top"/>
+        <Button x:Name="One" Content="1" HorizontalAlignment="Left" Margin="260,365,0,0" Width="86" Click="Button_Click" RenderTransformOrigin="2.033,-3.183" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="Two" Content="2" HorizontalAlignment="Left" Margin="351,365,0,0" Width="86" Click="Button_Click" RenderTransformOrigin="2.317,-3.15" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="Three" Content="3" HorizontalAlignment="Left" Margin="441,366,0,0" Width="86" Click="Button_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="Four" Content="4" HorizontalAlignment="Left" Margin="260,442,0,0" Width="86" Click="Button_Click" RenderTransformOrigin="0.517,0.517" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="Five" Content="5" HorizontalAlignment="Left" Margin="351,442,0,0" Width="86" Click="Button_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="Six" Content="6" HorizontalAlignment="Left" Margin="441,443,0,0" Width="86" Click="Button_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="Seven" Content="7" HorizontalAlignment="Left" Margin="260,520,0,0" Width="86" Click="Button_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="Eight" Content="8" HorizontalAlignment="Left" Margin="351,519,0,0" Width="86" Click="Button_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="Nine" Content="9" HorizontalAlignment="Left" Margin="441,520,0,0" Width="86" Click="Button_Click" Height="72" RenderTransformOrigin="0.727,-0.708" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="EnterButton" Content="=" HorizontalAlignment="Left" Margin="441,597,0,0" Width="86" Click="EnterButton_Click" RenderTransformOrigin="2.033,-3.183" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="ClearButton" Content="Clear" Margin="441,288,0,0" Width="86" Click="ClearButton_Click" Height="72" Background="#FFF3F3F3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="AddButton" Content="+" HorizontalAlignment="Left" Margin="533,366,0,0" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="SubtractButton" Content="-" HorizontalAlignment="Left" Margin="533,443,0,0" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="MultiplyButton" Content="x" HorizontalAlignment="Left" Margin="533,520,0,0" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="DivideButton" Content="/" HorizontalAlignment="Left" Margin="533,597,0,0" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="BackspaceButton" Content="Backspace" Margin="532,288,0,0" Width="86" Click="BackspaceButton_Click" Height="72" Background="#FFF3F3F3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="Zero" Content="0" HorizontalAlignment="Left" Margin="351,596,0,0" Width="86" Click="Button_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Textbox1" HorizontalAlignment="Left" TextWrapping="Wrap" Margin="169,182,0,0" Background="WhiteSmoke" Width="350" Height="30" FontSize="20" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Textbox0" HorizontalAlignment="Left" TextWrapping="Wrap" Margin="169,212,0,0" Background="WhiteSmoke" Width="350" Height="32" FontSize="20" VerticalAlignment="Top"/>
+        <Button x:Name="RightParenButton" Content=")" Margin="168,288,0,0" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="LeftParenButton" Content="(" Margin="77,288,0,0" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Textbox3" HorizontalAlignment="Left" TextWrapping="Wrap" Margin="169,120,0,0" Background="WhiteSmoke" Width="350" Height="30" FontSize="20" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Textbox4" HorizontalAlignment="Left" TextWrapping="Wrap" Margin="169,88,0,0" Background="WhiteSmoke" Width="350" Height="32" FontSize="20" VerticalAlignment="Top"/>
+        <Button x:Name="SineButton" Content="sin" HorizontalAlignment="Left" Margin="169,442,0,0" Width="86" Click="FunctionButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="CosineButton" Content="cos" HorizontalAlignment="Left" Margin="169,519,0,0" Width="86" Click="FunctionButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="TangentButton" Content="tan" Margin="169,365,0,0" HorizontalAlignment="Left" Click="FunctionButton_Click" Width="86"  Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="PiButton" Content="π" HorizontalAlignment="Left" Margin="77,596,0,0" Width="86" Click="PiButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="Seven_Copy" Content="7" HorizontalAlignment="Left" Margin="260,519,0,0" Width="86" Click="Button_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="OneOverXButton" Content="1/x" HorizontalAlignment="Left" Margin="77,519,0,0" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="NaturalLogButton" Content="ln" HorizontalAlignment="Left" Margin="77,442,0,0" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="LogButton" Content="log" HorizontalAlignment="Left" Margin="77,365,0,0" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="eButton" Content="e" HorizontalAlignment="Left" Margin="169,596,0,0" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="RadButton" Content="Rad" Margin="259,288,0,0" Width="86" Click="RadButton_Click" Height="72" Background="#FFF3F3F3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="SqrtButton" Content="√" Margin="350,288,0,0" Width="86" Click="SqrtButton_Click" Height="72" Background="#FFF3F3F3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
