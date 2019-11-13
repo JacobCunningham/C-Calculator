@@ -24,6 +24,7 @@ namespace CSharpCalculator
         private Display MainDisplay;
         private Calculator calculator;
         private string expression;
+        public double LastResult = 0;
 
         public MainWindow()
         {
@@ -51,6 +52,7 @@ namespace CSharpCalculator
                 expression = "";
                 MainDisplay.UpdateDisplay(" = " + result.ToString());
                 MainDisplay.MoveUp();
+                LastResult = result;
             }
         }
 
@@ -98,12 +100,6 @@ namespace CSharpCalculator
                 case "x²":
                     expression += "^";
                     break;
-                case "log":
-                    expression += "log";
-                    break;
-                case "ln":
-                    expression += "ln";
-                    break;
                 case "e":
                     expression += Math.E;
                     break;
@@ -131,13 +127,18 @@ namespace CSharpCalculator
 
         private void RadButton_Click(object sender, RoutedEventArgs e)
         {
-            
-        }
+            calculator.IsRadMode = !calculator.IsRadMode;
+            var button = sender as Button;
 
-        private void SqrtButton_Click(object sender, RoutedEventArgs e)
-        {
-            expression += "S(";
-            MainDisplay.UpdateDisplay("√(");
+            if (calculator.IsRadMode)
+            {
+                button.Content = "RAD";
+            }
+            else
+            {
+                button.Content = "DEG";
+            }
+            
         }
 
         private void FunctionButton_Click(object sender, RoutedEventArgs e)
@@ -156,12 +157,50 @@ namespace CSharpCalculator
                 case "tan":
                     expression += "tan";
                     break;
+                case "log":
+                    expression += "log";
+                    break;
+                case "ln":
+                    expression += "ln";
+                    break;
+                case "√":
+                    expression += "S";
+                    break;
                 default:
                     break;
             }
             _add_LParen();
             MainDisplay.UpdateDisplay(operand);
             MainDisplay.UpdateDisplay("(");
+        }
+
+        private void MRecall_Click(object sender, RoutedEventArgs e)
+        {
+            if (expression.Length == 0)
+            {
+                expression += calculator.Memory.ToString();
+                MainDisplay.UpdateDisplay(calculator.Memory.ToString());
+            }
+            else if (calculator.operators.Contains(expression[expression.Length-1].ToString()) || expression[expression.Length-1].ToString() == "(")
+            {
+                expression += calculator.Memory.ToString();
+                MainDisplay.UpdateDisplay(calculator.Memory.ToString());
+            }
+        }
+
+        private void MemClear_Click(object sender, RoutedEventArgs e)
+        {
+            calculator.ClearMemory();
+        }
+
+        private void MemAdd_Click(object sender, RoutedEventArgs e)
+        {
+            calculator.AddMemory(LastResult);
+        }
+
+        private void MemSub_Click(object sender, RoutedEventArgs e)
+        {
+            calculator.SubMemory(LastResult);
         }
     }
 }

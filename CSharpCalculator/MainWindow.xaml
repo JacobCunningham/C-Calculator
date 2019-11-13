@@ -34,14 +34,18 @@
         <Button x:Name="SineButton" Content="sin" HorizontalAlignment="Left" Margin="169,442,0,0" Width="86" Click="FunctionButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
         <Button x:Name="CosineButton" Content="cos" HorizontalAlignment="Left" Margin="169,519,0,0" Width="86" Click="FunctionButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
         <Button x:Name="TangentButton" Content="tan" Margin="169,365,0,0" HorizontalAlignment="Left" Click="FunctionButton_Click" Width="86"  Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
-        <Button x:Name="PiButton" Content="π" HorizontalAlignment="Left" Margin="77,596,0,0" Width="86" Click="PiButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="PiButton" Content="π" HorizontalAlignment="Left" Margin="168,596,0,0" Width="86" Click="PiButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
         <Button x:Name="Seven_Copy" Content="7" HorizontalAlignment="Left" Margin="260,519,0,0" Width="86" Click="Button_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
         <Button x:Name="OneOverXButton" Content="1/x" HorizontalAlignment="Left" Margin="77,519,0,0" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
-        <Button x:Name="NaturalLogButton" Content="ln" HorizontalAlignment="Left" Margin="77,442,0,0" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
-        <Button x:Name="LogButton" Content="log" HorizontalAlignment="Left" Margin="77,365,0,0" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
-        <Button x:Name="eButton" Content="e" HorizontalAlignment="Left" Margin="169,596,0,0" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
-        <Button x:Name="RadButton" Content="Rad" Margin="259,288,0,0" Width="86" Click="RadButton_Click" Height="72" Background="#FFF3F3F3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Button x:Name="SqrtButton" Content="√" Margin="350,288,0,0" Width="86" Click="SqrtButton_Click" Height="72" Background="#FFF3F3F3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="NaturalLogButton" Content="ln" HorizontalAlignment="Left" Margin="77,442,0,0" Width="86" Click="FunctionButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="LogButton" Content="log" HorizontalAlignment="Left" Margin="77,365,0,0" Width="86" Click="FunctionButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="eButton" Content="e" HorizontalAlignment="Left" Margin="260,597,0,0" Width="86" Click="OperandButton_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="RadButton" Content="RAD" Margin="259,288,0,0" Width="86" Click="RadButton_Click" Height="72" Background="#FFF3F3F3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="SqrtButton" Content="√" Margin="350,288,0,0" Width="86" Click="FunctionButton_Click" Height="72" Background="#FFF3F3F3" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="MemRecall" Content="MR" HorizontalAlignment="Left" Margin="77,597,0,0" Width="86" Click="MRecall_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="MemClear" Content="MC" HorizontalAlignment="Left" Margin="77,674,0,0" Width="86" Click="MemClear_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="MemAdd" Content="M+" HorizontalAlignment="Left" Margin="168,673,0,0" Width="86" Click="MemAdd_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
+        <Button x:Name="MemSub" Content="M-" HorizontalAlignment="Left" Margin="260,674,0,0" Width="86" Click="MemSub_Click" Height="72" Background="#FFF3F3F3" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

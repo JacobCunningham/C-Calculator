@@ -11,9 +11,14 @@ namespace CSharpCalculator
     class Calculator
     {
 
-        private List<string> operators = new List<string>(new string[] { "-", "+", "/", "*" });
+        public bool IsRadMode = true;
+        public double Memory = 0;
+
+        public List<string> operators = new List<string>(new string[] { "-", "+", "/", "*" });
+
         private List<string> _leftAssociatedOperators = new List<string>(new string[] { "-", "+", "/", "*" });
-        private List<string> functions = new List<string>(new string[] { "sin", "cos", "tan","^","ln","log", "S" });
+        private List<string> functions = new List<string>(new string[] { "^","ln","log", "S" });
+        private List<string> trigFunctions = new List<string>(new string[] { "sin", "cos", "tan" });
 
         public Queue<string> ParseExpression(string input)
         {
@@ -44,7 +49,7 @@ namespace CSharpCalculator
                         // While operator stack isn't empty, the token isn't a left paren, and the precedence of the top of the op stack is greater than the token or equal too and is left associative
                         while ((operatorStack.Count > 0) && 
                               (functions.Contains(operatorStack.Peek()) || (operators.FindIndex(op => op == operatorStack.Peek()) > operators.FindIndex(t => t == token)) ||
-                               (operators.FindIndex(op => op == operatorStack.Peek()) == operators.FindIndex(t => t == token)) && _leftAssociatedOperators.Contains(token)) && (token != "("))
+                              (operators.FindIndex(op => op == operatorStack.Peek()) == operators.FindIndex(t => t == token)) && _leftAssociatedOperators.Contains(token)) && (token != "("))
                         {
                             infixExpression.Enqueue(operatorStack.Pop());
                         }
@@ -91,7 +96,7 @@ namespace CSharpCalculator
                 {
                     expressionStack.Push(double.Parse(inputInfix.Dequeue()));
                 }
-                else if (operators.Contains(inputInfix.Peek()) || functions.Contains(inputInfix.Peek()))
+                else if (operators.Contains(inputInfix.Peek()) || functions.Contains(inputInfix.Peek()) || trigFunctions.Contains(inputInfix.Peek()))
                 {
                     string operand = inputInfix.Dequeue();
                     double result;
@@ -99,6 +104,11 @@ namespace CSharpCalculator
                     {
                         double param = expressionStack.Pop();
                         result = _evaluateFunction(operand, param);
+                    }
+                    else if (trigFunctions.Contains(operand))
+                    {
+                        double param = expressionStack.Pop();
+                        result = _evaluateTrigFunction(operand, param);
                     }
                     else
                     {
@@ -134,16 +144,43 @@ namespace CSharpCalculator
             return 0;
         }
 
+
+        private double _evaluateTrigFunction(string function, double args)
+        {
+
+            double answer;
+
+            switch (function)
+            {
+                case "sin":
+                    answer = Math.Sin(args);
+                    break;
+                case "cos":
+                    answer = Math.Cos(args);
+                    break;
+                case "tan":
+                    answer = Math.Tan(args);
+                    break;
+                default:
+                    answer = 0;
+                    break;
+            }
+            if (IsRadMode)
+            {
+                return answer;
+            }
+            else
+            {
+                answer = (180 / Math.PI) * answer;
+                return answer;
+            }
+        }
+
+
         private double _evaluateFunction(string function, double args)
         {
             switch (function)
             {
-                case "sin":
-                    return Math.Sin(args);
-                case "cos":
-                    return Math.Cos(args);
-                case "tan":
-                    return Math.Tan(args);
                 case "log":
                     return Math.Log10(args);
                 case "ln":
@@ -160,6 +197,23 @@ namespace CSharpCalculator
         {
             Queue<string> infixExpression = ParseExpression(inputExpression);
             return evaluateInfix(infixExpression);
+        }
+
+        public double AddMemory(double addend)
+        {
+            Memory += addend;
+            return Memory;
+        }
+
+        public double SubMemory(double subtrahend)
+        {
+            Memory -= subtrahend;
+            return Memory;
+        }
+
+        public void ClearMemory()
+        {
+            Memory = 0;
         }
 
     }
