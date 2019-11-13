@@ -64,9 +64,12 @@ namespace CSharpCalculator
                     if (operatorStack.Peek() == "(")
                     {
                         operatorStack.Pop();
-                        if (functions.Contains(operatorStack.Peek()))
+                        if (operatorStack.Count != 0)
                         {
-                            infixExpression.Enqueue(operatorStack.Pop());
+                            if (functions.Contains(operatorStack.Peek()))
+                            {
+                                infixExpression.Enqueue(operatorStack.Pop());
+                            }
                         }
                     }
                 }
