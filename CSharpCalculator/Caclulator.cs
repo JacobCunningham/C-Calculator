@@ -40,7 +40,7 @@ namespace CSharpCalculator
                 {
                     infixExpression.Enqueue(token);
                 }
-                else if (functions.Contains(token))
+                else if (functions.Contains(token) || trigFunctions.Contains(token))
                 {
                     operatorStack.Push(token);
                 }
@@ -48,7 +48,7 @@ namespace CSharpCalculator
                 {
                         // While operator stack isn't empty, the token isn't a left paren, and the precedence of the top of the op stack is greater than the token or equal too and is left associative
                         while ((operatorStack.Count > 0) && 
-                              (functions.Contains(operatorStack.Peek()) || (operators.FindIndex(op => op == operatorStack.Peek()) > operators.FindIndex(t => t == token)) ||
+                              (functions.Contains(operatorStack.Peek()) || trigFunctions.Contains(operatorStack.Peek()) || (operators.FindIndex(op => op == operatorStack.Peek()) > operators.FindIndex(t => t == token)) ||
                               (operators.FindIndex(op => op == operatorStack.Peek()) == operators.FindIndex(t => t == token)) && _leftAssociatedOperators.Contains(token)) && (token != "("))
                         {
                             infixExpression.Enqueue(operatorStack.Pop());
@@ -144,11 +144,15 @@ namespace CSharpCalculator
             return 0;
         }
 
-
         private double _evaluateTrigFunction(string function, double args)
         {
 
             double answer;
+
+            if (!IsRadMode)
+            {
+                args = DegreeToRadians(args);
+            }
 
             switch (function)
             {
@@ -165,17 +169,10 @@ namespace CSharpCalculator
                     answer = 0;
                     break;
             }
-            if (IsRadMode)
-            {
-                return answer;
-            }
-            else
-            {
-                answer = (180 / Math.PI) * answer;
-                return answer;
-            }
+           
+            return answer;
+          
         }
-
 
         private double _evaluateFunction(string function, double args)
         {
@@ -191,6 +188,16 @@ namespace CSharpCalculator
                     break;
             }
             return 0;
+        }
+
+        public double RadtoDegree(double radians)
+        {
+            return radians * (180 / Math.PI);
+        }
+
+        public double DegreeToRadians(double degrees)
+        {
+            return degrees * (Math.PI / 180);
         }
 
         public double Caclulate(string inputExpression)
